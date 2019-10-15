@@ -4,6 +4,7 @@
   var UPLOAD_URL = 'https://js.dump.academy/keksobooking';
   var LOAD_URL = 'https://js.dump.academy/keksobooking/data';
   var STATUS_OK = 200;
+  var TIMEOUT = 10000;
 
   var createXHR = function (onSuccess, onError) {
     var xhr = new XMLHttpRequest();
@@ -25,7 +26,7 @@
       onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
     });
 
-    xhr.timeout = 10000;
+    xhr.timeout = TIMEOUT;
 
     return xhr;
   };
